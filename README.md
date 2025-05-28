@@ -1,0 +1,1 @@
+# telemetry-astronomy-shop-infrastructure
