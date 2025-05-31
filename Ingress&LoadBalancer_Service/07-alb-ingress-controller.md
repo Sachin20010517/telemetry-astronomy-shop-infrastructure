@@ -2,11 +2,14 @@
 
 ##  Setup OIDC Connector
 
-#### commands to configure IAM OIDC provider 
+### commands to configure IAM OIDC provider 
+
+*The IAM OIDC provider is used to establish trust between your EKS cluster and AWS IAM, allowing Kubernetes service accounts to assume IAM roles using web identity federation.
 
 ```
 export cluster_name=demo-cluster
 ```
+Get the OIDC issuer URL from your EKS cluster and extract the OIDC ID:
 
 ```
 oidc_id=$(aws eks describe-cluster --name $cluster_name --query "cluster.identity.oidc.issuer" --output text | cut -d '/' -f 5) 
